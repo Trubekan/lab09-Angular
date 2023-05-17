@@ -1,0 +1,20 @@
+<div class="container bg-danger">
+    <div>
+      <h2>Lista de Tareas</h2>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let tarea of tareas; let i = index">
+          <div class="d-flex justify-content-between align-items-center">
+            <span>{{ tarea }}</span>
+            <button class="btn btn-outline-success" (click)="eliminarTarea(i)">
+              &#10004;
+            </button>
+          </div>
+        </li>
+      </ul>
+      <div class="input-group mt-3">
+        <input type="text" class="form-control" [(ngModel)]="nuevaTarea" placeholder="Nueva tarea" />
+        <button class="btn btn-primary" (click)="agregarTarea()">Agregar Tarea</button>
+      </div>
+    </div>
+  </div>
+  
